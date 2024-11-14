@@ -9,7 +9,10 @@ const bot = new Client({
 
 const config = require("./config.json");
 
-const commands = "Ping parancs ";
+const commands = "Ping parancs, Help parancs, Teszt parancs, Botinfok parancs";
+
+const botinfos =
+  "Ez egy MAGYAR bot ami Open Source! [Eredetileg készítette: @Olcsa] Githubom: https://github.com/Olcsa123Dev/OpenBot-Source/";
 
 bot.once("ready", () => {
   console.log(`Bejelentkezve: ${bot.user.tag}`);
@@ -21,6 +24,12 @@ bot.on("messageCreate", (message) => {
     message.reply(`🏓 Pong!`);
   } else if (message.content === `${config.prefix}help`) {
     message.reply(`Jelenlegi parancsaim: ${commands}`);
+  } else if (message.content === `${config.prefix}help`) {
+    message.reply(`Jelenlegi parancsaim: ${commands}`);
+  } else if (message.content === `${config.prefix}teszt`) {
+    message.reply(`Teszt sikeres..`);
+  } else if (message.content === `${config.prefix}botinfok`) {
+    message.reply(`Bot információk: ${botinfos}`);
   }
 });
 
